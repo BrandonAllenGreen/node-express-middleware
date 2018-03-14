@@ -1,0 +1,23 @@
+{
+  "name": "express-middleware",
+  "version": "1.0.0",
+  "description": "1. Create a simple express app that includes the following routes:\r   - /home\r   - /see-our-chickens\r   - /see-our-eggs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonAllenGreen/node-express-middleware.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonAllenGreen/node-express-middleware/issues"
+  },
+  "homepage": "https://github.com/BrandonAllenGreen/node-express-middleware#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
