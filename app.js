@@ -1,13 +1,12 @@
 'use strict';
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-
 const easterEgg = (req, res, next) => {
   let date = new Date();
-  if (req.url.indexOf("eggs") > -1) {
-  console.log(`You found the easter egg at ${date}
+  if (req.url.indexOf('eggs') > -1) {
+    console.log(`You found the easter egg at ${date}
 
         ,ggadddd8888888bbbbaaa,_
      ,ad888,      \Y88,      \Y888baa,
@@ -28,32 +27,27 @@ const easterEgg = (req, res, next) => {
   }
   next();
 };
-  
+
 // middlewares
-app.use(express.static(__dirname + "/public", { extensions: "html" }));
+app.use(express.static(__dirname + '/public', { extensions: 'html' }));
 
 app.use(easterEgg);
 
-
-app.get("/home", (req, res) => {
-  console.log("home page");
+app.get('/home', (req, res) => {
   res.send(`<h3>You landed on the home page</h3>`);
-
 });
-  
-app.get("/chickens", (req, res) => {
-  console.log("chicken page");
+
+app.get('/chickens', (req, res) => {
   res.send(`<h3>You landed on the chicken page</h3>`);
 });
 
-app.get("/eggs", (req, res) => {
+app.get('/eggs', (req, res) => {
   res.send(`<h3>You landed on the egg page</h3>`);
 });
-  
+
 // error handlers
 app.use((req, res, next) => {
-  let err = new Error("This resource was not found");
-  console.log("404 handler");
+  let err = new Error('This resource was not found');
   err.status = 404;
   next(err);
 });
@@ -61,7 +55,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   // one error handler to rule them all
   res.json({
-    message: "You blew it",
+    message: 'You blew it',
     err: err.message
   });
 });
